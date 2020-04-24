@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 export class PostsItem extends React.Component {
-  componentDidMount() {}
-
   render() {
     const { item } = this.props;
     return (

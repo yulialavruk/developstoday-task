@@ -4,7 +4,15 @@
 //
 // import User from 'path/to/interfaces';
 
-export type User = {
-  id: number
-  name: string
-}
+export type PostsType = {
+  id: number;
+  title: string;
+  body: string;
+  comments: Array<CommentsType>;
+};
+
+export type CommentsType = {
+  id: number;
+  postId: number;
+  body: string;
+};

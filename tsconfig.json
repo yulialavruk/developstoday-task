@@ -19,5 +19,13 @@
     "target": "esnext"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "components/Posts.jsx"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "components/Posts.tsx",
+    "pages/posts/[id].tsx",
+    "pages/_app.tsx",
+    "pages/index.tsx",
+    "pages/posts/new.tsx"
+  ]
 }

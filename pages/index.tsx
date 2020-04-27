@@ -1,11 +1,46 @@
 // import Link from "next/link";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { getPosts } from "../actions/actions";
 import Layout from "../components/Layout";
 import { Posts } from "../components/Posts";
+import { PostsType } from "../interfaces/index";
+import { StateType } from "../reducers/reducer";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <Posts />
-  </Layout>
-);
+type StateToPropsType = {
+  posts: Array<PostsType>;
+  isFetching: boolean;
+};
 
-export default IndexPage;
+type DispatchToPropsType = {
+  getPosts: () => void;
+};
+
+type Props = StateToPropsType & DispatchToPropsType;
+
+const IndexPage: React.FC<Props> = ({ posts, isFetching, getPosts }) => {
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  return (
+    <Layout title="Home | Next.js + TypeScript Example">
+      {isFetching ? <p>...Loading</p> : <Posts posts={posts} />}
+    </Layout>
+  );
+};
+
+const mapStateToProps = (state: StateType) => {
+  return {
+    posts: state.posts,
+    isFetching: state.isFetching,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    getPosts: () => dispatch(getPosts()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);

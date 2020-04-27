@@ -22,7 +22,7 @@ type PostDetailsType = {
   payload: object;
 };
 
-const actionCreatorPostDetails = (payload: object): PostDetailsType => {
+const actionCreatorPostDetails = (payload: PostsType): PostDetailsType => {
   return {
     type: "POST_DETAILS",
     payload,
@@ -82,8 +82,6 @@ export const createComment = (id: number, comment: string) => (
     .then((response) => {
       if (response.status === 201) {
         dispatch(getPostDetails(id));
-      } else {
-        return;
       }
     });
 };

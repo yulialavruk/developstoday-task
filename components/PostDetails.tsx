@@ -24,7 +24,7 @@ export const PostDetails: React.FC<Props> = ({ post, createComment }) => {
       {post.comments &&
         post.comments.map((item: any) => <p key={item.id}>{item.body}</p>)}
       <Textarea value={comment} onChange={(e) => setComment(e.target.value)} />
-      <Button type="button" onClick={onCreateComment}>
+      <Button type="button" onClick={onCreateComment} disabled={comment === ""}>
         Submit
       </Button>
     </PostDetailsWrapper>

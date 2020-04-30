@@ -1,9 +1,9 @@
-import { PostsType } from "../interfaces/index";
+import { PostType } from "../interfaces/index";
 
 export type StateType = {
   isFetching: boolean;
-  posts: Array<PostsType>;
-  post_details: PostsType | {};
+  posts: Array<PostType>;
+  post_details: PostType | {};
 };
 
 const initialState: StateType = {

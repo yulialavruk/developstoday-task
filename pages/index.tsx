@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 import { getPosts } from "../actions/actions";
 import Layout from "../components/Layout";
 import { Posts } from "../components/Posts";
-import { PostsType } from "../interfaces/index";
+import { PostType } from "../interfaces/index";
 import { StateType } from "../reducers/reducer";
 
 type StateToPropsType = {
-  posts: Array<PostsType>;
+  posts: Array<PostType>;
   isFetching: boolean;
 };
 

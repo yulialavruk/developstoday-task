@@ -1,5 +1,5 @@
 import axios from "axios";
-import { PostsType } from "../interfaces/index";
+import { PostType } from "../interfaces/index";
 
 const POSTS_LIST = "POSTS_LIST";
 const POST_DETAILS = "POST_DETAILS";
@@ -7,10 +7,10 @@ const POST_FETCHING = "POST_FETCHING";
 
 type PostsListType = {
   type: typeof POSTS_LIST;
-  payload: Array<PostsType>;
+  payload: Array<PostType>;
 };
 
-const actionCreatorPostsList = (payload: Array<PostsType>): PostsListType => {
+const actionCreatorPostsList = (payload: Array<PostType>): PostsListType => {
   return {
     type: POSTS_LIST,
     payload,
@@ -22,7 +22,7 @@ type PostDetailsType = {
   payload: object;
 };
 
-const actionCreatorPostDetails = (payload: PostsType): PostDetailsType => {
+const actionCreatorPostDetails = (payload: PostType): PostDetailsType => {
   return {
     type: "POST_DETAILS",
     payload,

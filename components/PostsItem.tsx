@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { PostsType } from "../interfaces/index";
+import { PostType } from "../interfaces/index";
 
 type Props = {
-  post: PostsType,
+  post: PostType;
 };
 
 export const PostsItem: React.FC<Props> = ({ post }) => (

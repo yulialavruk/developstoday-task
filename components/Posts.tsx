@@ -1,16 +1,16 @@
 // import React from "react";
 import styled from "styled-components";
-import { PostsType } from "../interfaces/index";
+import { PostType } from "../interfaces/index";
 import { PostsItem } from "./PostsItem";
 
 type Props = {
-  posts: PostsType[];
+  posts: PostType[];
 };
 
 export const Posts: React.FC<Props> = ({ posts }) => {
   return (
     <PostsWrapper>
-      {posts.map((post: PostsType) => (
+      {posts.map((post: PostType) => (
         <div key={post.id}>
           <PostsItem post={post} />
         </div>

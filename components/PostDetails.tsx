@@ -1,7 +1,7 @@
 import React, { useState, MouseEvent } from "react";
 import styled from "styled-components";
 import { Textarea, Button } from "./ui/ui";
-// import { PostsType } from "../interfaces/index";
+// import { PostType } from "../interfaces/index";
 
 type Props = {
   post: any;

@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
-// import Link from "next/link";
-// import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
 import { getPostDetails, createComment } from "../../actions/actions";
 import Layout from "../../components/Layout";
 import { PostDetails } from "../../components/PostDetails";
 import { StateType } from "../../reducers/reducer";
-import { PostsType } from "../../interfaces/index";
+import { PostType } from "../../interfaces/index";
 
 type StateToPropsType = {
   isFetching: boolean;
-  post_details: PostsType | {};
+  post_details: PostType | {};
 };
 
 type DispatchToPropsType = {
